@@ -1,0 +1,19 @@
+apply: info.apply
+1,apply 函数的返回：永远返回的都是info本身，即返回调用这本身 【also】
+2,apply 的匿名函数体{ 持有的是this == info 本身 即调用者本身} 【等同于run、with】
+
+let:集合.let
+1,let 函数的返回，是由匿名函数体{}最后 一行决定的 【等同run、with】
+2,let 的匿名函数体{持有的是it == 集合本身  即调用者本身} 【also】
+
+run: 集合.run
+1,run函数的返回，是根据匿名函数的最后一行返回的， 变化而变化 【等同let，with】
+2,run函数的的匿名函数体{持有的是this == 集合    this==调用这本身}  【等同于apply、with】
+
+with : with(集合) with 跟run 一样，只是使用方式不同, run 可以匿名链式调用，with 不可以
+1,with函数的返回，是根据匿名函数的最后一行返回的， 变化而变化 【等同let、run】
+2,with函数的的匿名函数体{持有的是this == 集合    this==调用这本身}  【等同于apply, run】
+
+also: 集合.apply
+1,also 函数的返回：永远返回的都是集合本身，即返回调用这本身 【等同apply】
+2,also   的匿名函数体{ 持有的是it == 集合 本身 即调用者本身} 【等同于run,let】
