@@ -17,3 +17,21 @@ with : with(集合) with 跟run 一样，只是使用方式不同, run 可以匿
 also: 集合.apply
 1,also 函数的返回：永远返回的都是集合本身，即返回调用这本身 【等同apply】
 2,also   的匿名函数体{ 持有的是it == 集合 本身 即调用者本身} 【等同于run,let】
+
+//==============apply 与also 是一个类别的 属于一类的===============
+相同点：apply 与also 返回类型一样，他们永远都是返回调用者本身，匿名函数，最后一行
+        无法作为返回值，不影响函数返回类型
+不同点：匿名函数里面 apply{ 持有this setFilexxx()}  also{持有it it.setFilexxx() }
+应用点：
+    val file本身（调用者本身） = File("xxx").apply{setFilexxx() ...}.apply{...}.apply{...}链式调用
+    val file本身（调用者本身） = File("xxx").apply{it.setFilexxx() ...}.also{...}.also{...}链式调用
+        "zhangsan".apply {
+            "apply()"
+        }
+        "zhangsan".also {
+            "apply()"
+        }
+
+//===================run 与 let、 with 是一个类别============================
+相同点：run 与let、with 返回类型是一样的，都是匿名函数最后一行返回类型决定
+不同点：匿名函数里run with 持有this，let持有it

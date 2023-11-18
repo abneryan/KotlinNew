@@ -6,7 +6,9 @@ package com.example.kotlinnew.s5
  * @Description:
  */
 //伴生对象的由来：在KT 中没有Java类中的static静态，伴生对象在很大程度上和java 中的static 静态相似
-
+//不管K88()构建多少次，我们的伴生对象，只会有一次加载
+//不管K88.showInfo() 调用多少次，我们的伴生对象，只会有一次加载
+//伴生对象只会初始化一次
 /*
     public final class K88 {
    @NotNull
