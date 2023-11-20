@@ -8,4 +8,5 @@ package com.example.kotlinnew.s6.k129
 fun main() {
     SingletonDemo.toString()
     SingletonDemo2.getInstanceAction().show()
+    SingletonDemo6.instance.show()
 }
